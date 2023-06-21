@@ -174,11 +174,6 @@ int isSubtree(Node *T1, Node *T2) {
     return isSubtree(T1->left, T2) || isSubtree(T1->right, T2);
 }
 
-int checkABR(Node *root) {
-    if(root == NULL) return 1;
-
-    if()
-}
 
 
 int main() {
