@@ -211,6 +211,10 @@ int main() {
     printTree(h);
     puts("\nTree 2:");
     printTree(t);
+
+    Node *T3 = mergeSumTrees(t, h);
+    puts("\nT3 merged sum");
+    printTree(T3);
     printf("\nT2 is subtree of T: %d", isSubtree(h, t));
     int i = 160;
     printf("\nRemove %d:\n", i);
