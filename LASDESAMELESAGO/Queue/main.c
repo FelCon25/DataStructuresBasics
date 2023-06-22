@@ -70,6 +70,21 @@ void moltiplica(int Q[]){
     moltiplica_queue(Q);
     reverse(Q);
 }
+
+void ren(int *s) {
+    if(!emptyQueue(s)) {
+        int i = dequeue(s);
+        ren(s);
+        if(i % 2 != 0)
+        enqueue(s, i);
+    }
+}
+
+void removeEven(int *s) {
+    ren(s);
+    reverse(s);
+}
+
 int main() {
     int q[MAX+2];
     newQueue(q);
@@ -79,6 +94,9 @@ int main() {
     enqueue(q, 7);
     enqueue(q, 3);
     stampa(q);
+    removeEven(q);
+
+    puts("coda senza pari");
     stampa(q);
 
     return 0;
