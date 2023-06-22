@@ -174,6 +174,17 @@ int isSubtree(Node *T1, Node *T2) {
     return isSubtree(T1->left, T2) || isSubtree(T1->right, T2);
 }
 
+Node* mergeSumTrees(Node* T1, Node* T2) {
+    if (T1 == NULL && T2 == NULL) return NULL;
+    else if (T1 == NULL) return T2;
+    else if (T2 == NULL) return T1;
+
+    Node* merged = createNode(T1->i + T2->i);
+    merged->left = mergeSumTrees(T1->left, T2->left);
+    merged->right = mergeSumTrees(T1->right, T2->right);
+
+    return merged;
+}
 
 
 int main() {
